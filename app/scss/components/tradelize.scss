@@ -1,10 +1,27 @@
 .tradelize {
-    $r: &;
-
     background: #F1F6FF;
 
-    &__wrapper {
-        padding-right: 20%;
+    &__inner {
+        max-width: 1440px;
+        padding: 0 40px;
+        position: relative;
+
+        &::after {
+            content: '';
+
+        }
+    }
+
+    &__title-wrapper {
+        padding-right: 90px;
+        @media (max-width: 1200px) {
+            text-align: center;
+            padding-right: 0;
+        }
+    }
+
+    &__description {
+        margin-bottom: 40px;
     }
 
     &__title {
@@ -12,10 +29,6 @@
         font-weight: 900;
         font-size: 38px;
     }
-
-    // &__description {
-
-    // }
 
     &__info {
         font-size: 24px;
@@ -26,26 +39,45 @@
     &__box {
         margin-bottom: 30px;
         cursor: pointer;
-        // overflow: hidden;
+        transition: color 0.2s linear;
 
         &:hover {
             .tradelize__tab {
                 display: block;
+            }
+            .tradelize__info{
+                color: #0057FF;
+            }
+
+            .badge {
+                background-color: #0057FF;
+                color: #ffffff;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            &:first-child {
+                margin-top: 40px;
+            }
+        }
+        @media (max-width: 768px) {
+            &:first-child {
+                margin-top: 0;
             }
         }
     }
 
     &__info {
         margin-left: 7px;
-        transition: color 0.2s linear;
-        &:hover {
-            color: #0057FF;
-        }
     }
 
     &__tab {
         display: none;
-        padding: 0 10px 0 52px ;
+        padding: 0 80px 0 52px;
+
+        @media (max-width: 992px) {
+            padding: 0 20px 0 52px;
+        }
     }
 
     p {
@@ -53,10 +85,47 @@
     }
 
     &__name {
+        position: relative;
+        padding-top: 90%;
         background-image: url(../../img/name.svg);
-        // img {
-        //     width: 100%;
-        // }
+        background-repeat: no-repeat;
+        background-position: center 70%;
+        background-size: 110%;
+        @media(min-width: 1200px) {
+            margin-top: -200px;
+        }
+        @media(max-width: 1200px) {
+            background-image: url(../../img/bg2.svg);
+            background-size: 100%;
+            width: 90%;
+            margin: 0 auto;
+            background-position: center top;
+        }
+        @media (max-width: 767.98px) {
+            margin-top: 10%;
+        }
+        @media (max-width: 575.98px) {
+            margin-top: 20%;
+        }
+        @media (max-width: 375.98px) {
+            margin-top: 25%;
+        }
+    }
+
+    &__img-wrapper {
+        position: absolute;
+        top: 12%;
+        left: 0;
+        right: 0;
+        box-shadow: 0 0 0 7px #e1eafa, 
+                    0 0 0 10px #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
     }
 
 }

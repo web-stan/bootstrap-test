@@ -1,3 +1,14 @@
 .btn {
+    padding: 15px 40px; 
+    box-shadow: 0 6px 20px -5px  #0057FF;
+    font-family: 'Mulish', sans-serif;
+    border-radius: 10px;
+    @media (max-width: 375px) {
+        width: 100%;
+    }
+}
+
+.badge {
+    padding: 15px 18px;
     border-radius: 15px;
 }

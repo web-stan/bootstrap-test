@@ -1,0 +1,41 @@
+.decor,.decor-2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(58deg);
+    // bottom: -45px;
+    // &__item {
+    //     width: 110px;
+    //     height: 32px;
+    //     border-radius: 5px;
+    // }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        width: 80px;
+        height: 32px;
+        border-radius: 16px;
+        // background-color: #2C3952;
+        background-color: #F1F6FF;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        width: 80px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: #ffffff;
+        bottom: 0;
+    }
+}
+
+.decor {
+    bottom: -56px;
+}
+
+.decor-2 {
+    top: -108px;
+}
