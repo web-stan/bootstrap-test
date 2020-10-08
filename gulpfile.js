@@ -49,7 +49,7 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('export', function(){
+gulp.task('export', function(cb){
   let buildHtml = gulp.src('app/**/*.html')
     .pipe(gulp.dest('dist'));
 
@@ -64,6 +64,8 @@ gulp.task('export', function(){
 
   let BuildImg = gulp.src('app/img/**/*.*')
     .pipe(gulp.dest('dist/img'));   
+
+  cb();
 });
 
 gulp.task('watch', function(){
